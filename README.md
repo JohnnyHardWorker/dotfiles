@@ -5,6 +5,7 @@ Contains everything to setup my developer environment.
 > Inpired by [Microsoft/windows-dev-box-setup-scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts) and other repositories using [boxstarter](https://boxstarter.org/) to setup their developer machine.
 
 ## How does this work?
+Invoke-Expression (Invoke-WebRequest https://github.com/JohnnyHardWorker/dotfiles/blob/main/boxstarter.ps1)
 
 [Boxstarter](https://boxstarter.org/) is used to avoid interruptions during installation and to launch the installation directly from an [URL](https://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/TechWatching/dotfiles/features/initialization/boxstarter.ps1) without manually downloading any software before. 
 
