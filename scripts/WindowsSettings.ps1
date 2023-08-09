@@ -2,6 +2,7 @@
 #--- Windows Features ---
 # Show hidden files, Show protected OS files, Show file extensions
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
+Set-TaskbarOptions -Size Small
 
 #--- File Explorer Settings ---
 # will expand explorer to the actual folder you're in
@@ -20,3 +21,18 @@ Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name BingSearchEnabled -Type DWord -Value 0
 # To Restore (Enabled):
 # Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name BingSearchEnabled -Type DWord -Value 1
+
+# Lock screen (not sleep) on lid close
+Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power' -Name AwayModeEnabled -Type DWord -Value 1
+
+# Turn off hibernation
+powercfg /H OFF
+
+# Change Power saving options (ac=plugged in dc=battery)
+powercfg -change -monitor-timeout-ac 0
+powercfg -change -monitor-timeout-dc 15
+powercfg -change -standby-timeout-ac 0
+powercfg -change -standby-timeout-dc 30
+powercfg -change -disk-timeout-ac 0
+powercfg -change -disk-timeout-dc 0
+powercfg -change -hibernate-timeout-ac 0
