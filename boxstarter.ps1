@@ -1,5 +1,5 @@
 # Install Boxstarter and Chocolatey
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1')); Get-Boxstarter -Force
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://boxstarter.org/bootstrapper.ps1')); Get-Boxstarter -Force
 RefreshEnv
 
 ## This command disables User Account Control to run the script without user interaction, it is enabled at the end of the script.
@@ -15,7 +15,7 @@ $Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a r
 # TODO: see how to improve install that by using chezmoi (choco install -y chezmoi)
 choco install -y git --params "/GitOnlyOnPath /NoShellIntegration /WindowsTerminal"
 RefreshEnv
-git clone https://github.com/TechWatching/dotfiles.git "$env:USERPROFILE\dotfiles"
+git clone https://github.com/JohnnyHardWorker/dotfiles.git "$env:USERPROFILE\dotfiles"
 # Git configuration
 Remove-Item -Path "$env:USERPROFILE\.gitconfig" -Force
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.gitconfig" -Target "$env:USERPROFILE\dotfiles\config\git\.gitconfig"
@@ -41,7 +41,7 @@ Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\AppModelU
 # choco install wsl2 --params "/Version:2 /Retry:true"
 
 # TODO: Docker
-# winget install -e -h --id suse.RancherDesktop
+# install_silent("suse.RancherDesktop")
 
 # // windowsfeatures (Windows Sandbox, .NET Framework)
 # // Taskbar (Set-BoxstarterTaskbarOptions)
