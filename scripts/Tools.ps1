@@ -1,13 +1,19 @@
-# ---------------------------------------------- #
-# Browsers  ------------------------------------ #
-# ---------------------------------------------- #
-choco install -y googlechrome
-choco install -y firefox
+# # ---------------------------------------------- #
+# # Browsers  ------------------------------------ #
+# # ---------------------------------------------- #
+# choco install -y googlechrome
+# choco install -y firefox
 
 # ---------------------------------------------- #
-# Common tools  --------------------------------- #
+# Social Media  ---------------------------------#
 # ---------------------------------------------- #
-choco install -y 7zip
+
+winget install -e -h --id SlackTechnologies.Slack
+winget install -e -h --id LINE.LINE
+
+# ---------------------------------------------- #
+# Common tools  ---------------------------------#
+# ---------------------------------------------- #
 choco install -y paint.net
 choco install -y screentogif
 choco install -y zoomit
@@ -17,19 +23,31 @@ winget install -e -h --id Obsidian.Obsidian
 winget install -e -h --id JohnMacFarlane.Pandoc
 winget install -e -h --id Microsoft.Whiteboard -s msstore
 winget install -e -h --id Microsoft.PowerToys # settings to sync
+winget install -e -h --id M2Team.NanaZip
+winget install -e -h --id QL-Win.QuickLook
+winget install -e -h --id ShareX.ShareX
+winget install -e -h --id File-New-Project.EarTrumpet
+winget install -e -h --id LupoPenSuite.DropIt
+winget install -e -h --id Notion.Notion
+winget install -e -h --id Microsoft.MouseWithoutBorders
+winget install -e -h --id SnipDo
 # Already  installed by default
 # winget install -e -h --id Microsoft.Teams
 # winget install -e -h --id Microsoft.Office
-winget install -e -h --id Logitech.Options
-winget install -e -h --id Dell.DisplayManager
 
 # ---------------------------------------------- #
-# Dev tools  ----------------------------------- #
+# Hardare tools ---------------------------------#
 # ---------------------------------------------- #
-winget install -e -h --id AndreasWascher.RepoZ
-winget install -e -h --id CoreyButler.NVMforWindows
-iwr https://get.pnpm.io/install.ps1 -useb | iex
-# iwr -useb get.scoop.sh | iex
+winget install -e -h --id Logitech.Options
+
+
+# # ---------------------------------------------- #
+# # Dev tools  ----------------------------------- #
+# # ---------------------------------------------- #
+# winget install -e -h --id AndreasWascher.RepoZ
+# winget install -e -h --id CoreyButler.NVMforWindows
+# Invoke-WebRequest https://get.pnpm.io/install.ps1 -useb | Invoke-Expression
+# # iwr -useb get.scoop.sh | iex
 
 
 # ---------------------------------------------- #
@@ -59,29 +77,27 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\nushell\
 # ---------------------------------------------- #
 # Windows Terminal ----------------------------- #
 # ---------------------------------------------- #
-# Windows Terminal (stable + preview) install with Cascadia Code PL font
+# Windows Terminal install with Cascadia Code PL font
 winget install -e -h --id Microsoft.WindowsTerminal -s msstore
-winget install -e -h --id Microsoft.WindowsTerminalPreview -s msstore
 choco install -y cascadiacodepl
 # Windows terminal configuration
 Remove-Item -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Force
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Target "$env:USERPROFILE\dotfiles\config\windowsTerminal\settings.json"
-cp "$env:USERPROFILE\dotfiles\config\windowsTerminal\icons\*" "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState\"
-# Windows terminal preview configuration
-Remove-Item -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json" -Force
-New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json" -Target "$env:USERPROFILE\dotfiles\config\windowsTerminal\settings.json"
-cp "$env:USERPROFILE\dotfiles\config\windowsTerminal\icons\*" "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\RoamingState\"
+Copy-Item "$env:USERPROFILE\dotfiles\config\windowsTerminal\icons\*" "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState\"
 
-# ---------------------------------------------- #
-# Azure tools  --------------------------------- #
-# ---------------------------------------------- #
-winget install -e -h --id Microsoft.AzureCLI
-winget install -e -h --id Microsoft.AzureCosmosEmulator
-winget install -e -h --id Microsoft.AzureDataStudio
-winget install -e -h --id Microsoft.azure-iot-explorer
-winget install -e -h --id Microsoft.AzureStorageExplorer
-winget install -e -h --id Pulumi.Pulumi
-winget install -e -h --id Microsoft.AzureFunctionsCoreTools
+
+
+
+# # ---------------------------------------------- #
+# # Azure tools  --------------------------------- #
+# # ---------------------------------------------- #
+# winget install -e -h --id Microsoft.AzureCLI
+# winget install -e -h --id Microsoft.AzureCosmosEmulator
+# winget install -e -h --id Microsoft.AzureDataStudio
+# winget install -e -h --id Microsoft.azure-iot-explorer
+# winget install -e -h --id Microsoft.AzureStorageExplorer
+# winget install -e -h --id Pulumi.Pulumi
+# winget install -e -h --id Microsoft.AzureFunctionsCoreTools
 # Azurite can be installed through vscode extension or as a global npm package
 # pnpm add -g azurite
 
