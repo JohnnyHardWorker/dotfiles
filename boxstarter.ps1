@@ -29,7 +29,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Local\Packages\M
 Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense -Value 1
 
 #--- Setting up Windows ---
-. "$env:USERPROFILE\dotfiles\scripts\FileExplorerSettings.ps1"
+. "$env:USERPROFILE\dotfiles\scripts\WindowsSettings.ps1"
 . "$env:USERPROFILE\dotfiles\scripts\RemoveDefaultApps.ps1"
 . "$env:USERPROFILE\dotfiles\scripts\Tools.ps1"
 . "$env:USERPROFILE\dotfiles\scripts\IDEs.ps1"
