@@ -1,4 +1,3 @@
-Microsoft.PowerShell_profile.ps1
 # The first time the Terminal-Icons module needs to be installed:
 # Install-Module -Name Terminal-Icons -Repository PSGallery
 Import-Module Terminal-Icons
@@ -19,8 +18,6 @@ function changeTheme {
 
 # Always use a random theme
 changeTheme
-
-fnm env --use-on-cd | Out-String | Invoke-Expression
 
 # History
 

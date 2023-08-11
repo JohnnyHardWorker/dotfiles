@@ -1,5 +1,6 @@
 [user]
 	name = Johnny Liu
+	email = j29404508@hotmail.com
 [fetch]
 	prune = true
 [pull]
@@ -32,4 +33,4 @@
 [init]
 	defaultBranch = main
 [safe]
-	directory = C:/Users/johnny.liu/dotfiles
+	directory = C:/Users/j2940/dotfiles

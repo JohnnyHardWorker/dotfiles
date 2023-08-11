@@ -63,8 +63,8 @@ install_silent("JanDeDobbeleer.OhMyPosh")
 # ---------------------------------------------- #
 install_silent("Microsoft.PowerShell")
 # Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-Remove-Item -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force
-New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Target "$env:USERPROFILE\dotfiles\config\powerShell\Microsoft.PowerShell_profile.ps1"
+Remove-Item -Path "$env:USERPROFILE\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force
+New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Target "$env:USERPROFILE\dotfiles\config\powerShell\Microsoft.PowerShell_profile.ps1"
 
 # ---------------------------------------------- #
 # NuShell  ------------------------------------- #
