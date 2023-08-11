@@ -528,4 +528,4 @@ let-env config = {
   ]
 }
 
-source '~/src/devenv/nushell/init.nu'
+source ' ~/.oh-my-posh.nu'
