@@ -15,9 +15,9 @@ install_silent("LINE.LINE")
 # ---------------------------------------------- #
 # Common tools  ---------------------------------#
 # ---------------------------------------------- #
-install_silent("paint.net", $True)
-install_silent("screentogif", $True)
-install_silent("zoomit", $True)
+choco install -y paint.net
+choco install -y screentogif
+choco install -y zoomit
 install_silent("WinDirStat.WinDirStat")
 install_silent("Microsoft.BingWallpaper")
 install_silent("Obsidian.Obsidian")
@@ -54,7 +54,8 @@ install_silent("Logitech.Options")
 # ---------------------------------------------- #
 # Prompt  -------------------------------------- #
 # ---------------------------------------------- #
-pwsh -Command { Install-Module posh-git -Scope CurrentUser -Force}
+Install-Module posh-git -Scope CurrentUser -Force
+RefreshEnv
 install_silent("JanDeDobbeleer.OhMyPosh")
 
 # ---------------------------------------------- #
@@ -80,7 +81,7 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\nushell\
 # ---------------------------------------------- #
 # Windows Terminal install with Cascadia Code PL font
 install_silent("Microsoft.WindowsTerminal")
-install_silent("cascadiacodepl", $True)
+choco install -y cascadiacodepl
 # Windows terminal configuration
 Remove-Item -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Force
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Target "$env:USERPROFILE\dotfiles\config\windowsTerminal\settings.json"
