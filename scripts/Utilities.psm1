@@ -1,21 +1,5 @@
 function install_silent {  
-    param([string]$app, [bool]$useChoco = $False) 
-
-    if ($useChoco) {
-        Write-Host -ForegroundColor Yellow  "Install:" $app
-        choco install -y $app
-        if ($LASTEXITCODE -eq 0) {
-            Write-Host -ForegroundColor Green "$app successfully installed."
-        }
-        else {
-            $app + " couldn't be installed." | Add-Content $errorlog
-            Write-Warning "$app couldn't be installed."
-            Write-Host -ForegroundColor Yellow "Write in $errorlog"
-            Pause
-        }  
-        return
-    }
-
+    param([string]$app) 
     $listApp = winget list --exact --accept-source-agreements -q $app
     if (![String]::Join("", $listApp).Contains($app)) {
         Write-Host -ForegroundColor Yellow  "Install:" $app
@@ -34,7 +18,7 @@ function install_silent {
             $app + " couldn't be installed." | Add-Content $errorlog
             Write-Warning "$app couldn't be installed."
             Write-Host -ForegroundColor Yellow "Write in $errorlog"
-            Pause
+            # Pause # for checking avaialabilities
         }  
     }
     else {

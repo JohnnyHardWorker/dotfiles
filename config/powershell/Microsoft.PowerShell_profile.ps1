@@ -6,10 +6,10 @@ Import-Module Terminal-Icons
 # Startup
 
 function changeTheme {
-    $Themes = "C:\Users\timde\AppData\Local\Programs\oh-my-posh\themes\"
+    $Themes = "$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes\"
     $Theme = $args[0]
     if($null -eq $Theme) {
-        $Theme = Get-ChildItem $Themes -name | Select-Object -index $(Random $((Get-ChildItem $Themes).Count))
+        $Theme = Get-ChildItem $Themes -name | Select-Object -index $(Get-Random $((Get-ChildItem $Themes).Count))
     } else {
         $Theme = $Theme + ".omp.json"
     }
@@ -33,23 +33,23 @@ Set-PSReadLineOption -EditMode Windows
 Set-Alias -Name code -Value code-insiders
 
 function .. {
-    cd ..
+    Set-Location ..
 }
 
 function .... {
-    cd ../../
+    Set-Location ../../
 }
 
 function ...... {
-    cd ../../../
+    Set-Location ../../../
 }
 
 function oss {
-    cd "~/dev/oss/$args"
+    Set-Location "~/dev/oss/$args"
 }
 
 function work {
-    cd "~/dev/work/$args"
+    Set-Location "~/dev/work/$args"
 }
 
 # Git
