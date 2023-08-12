@@ -7,7 +7,7 @@ winget install --id Microsoft.VisualStudio.2022.Enterprise --exact --silent --sc
 choco install -y ozcode-vs2022
 
 # Chocolatey version is more up-o-date than winget version
-choco install -y vscode
+install_silent("Microsoft.VisualStudioCode.Insiders")
 
 # Used to install manually JetBrains IDEs and tools (Rider, .NET Tools)
-install_silent("JetBrains.Toolbox")
+# install_silent("JetBrains.Toolbox")

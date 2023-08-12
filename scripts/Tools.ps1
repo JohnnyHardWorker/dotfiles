@@ -22,15 +22,15 @@ install_silent("WinDirStat.WinDirStat")
 install_silent("Microsoft.BingWallpaper")
 install_silent("Obsidian.Obsidian")
 install_silent("JohnMacFarlane.Pandoc")
-install_silent("Microsoft.Whiteboard")
+install_silent("Microsoft.Whiteboard") #xx
 install_silent("Microsoft.PowerToys") # settings to sync
-install_silent("M2Team.NanaZip")
-install_silent("QL-Win.QuickLook")
 install_silent("ShareX.ShareX")
-install_silent("File-New-Project.EarTrumpet")
-install_silent("LupoPenSuite.DropIt")
-install_silent("Notion.Notion")
 install_silent("Microsoft.MouseWithoutBorders")
+winget install -e -h --id M2Team.NanaZip
+winget install -e -h --id QL-Win.QuickLook
+winget install -e -h --id File-New-Project.EarTrumpet
+winget install -e -h --id LupoPenSuite.DropIt
+winget install -e -h --id Notion.Notion
 install_silent("SnipDo")
 # Already  installed by default
 # install_silent("Microsoft.Teams
